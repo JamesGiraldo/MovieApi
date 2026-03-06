@@ -9,6 +9,9 @@ public class User : BaseEntity
     public string PasswordHash { get; private set; } = default!;
     public bool IsActive { get; private set; } = true;
 
+    private readonly List<UserRole> _userRoles = new();
+    public IReadOnlyCollection<UserRole> UserRoles => _userRoles.AsReadOnly();
+
     private User() { }
 
     public User(string fullName, string email, string passwordHash)
@@ -16,6 +19,15 @@ public class User : BaseEntity
         FullName = fullName;
         Email = email;
         PasswordHash = passwordHash;
+    }
+
+    public void AddRole(Role role)
+    {
+        if (_userRoles.Any(x => x.RoleId == role.Id))
+            return;
+
+        _userRoles.Add(new UserRole(Id, role.Id));
+        MarkAsUpdated();
     }
 
     public void Deactivate()
