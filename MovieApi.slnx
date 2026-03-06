@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MovieApi.Api/MovieApi.Api.csproj" />
+    <Project Path="src/MovieApi.Application/MovieApi.Application.csproj" />
+    <Project Path="src/MovieApi.Domain/MovieApi.Domain.csproj" />
+    <Project Path="src/MovieApi.Infrastructure/MovieApi.Infrastructure.csproj" />
+    <Project Path="src/MovieApi.Shared/MovieApi.Shared.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MovieApi.IntegrationTests/MovieApi.IntegrationTests.csproj" />
+    <Project Path="tests/MovieApi.UnitTests/MovieApi.UnitTests.csproj" />
+  </Folder>
+</Solution>
